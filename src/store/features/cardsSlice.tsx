@@ -1,8 +1,7 @@
-import {CardResponse} from '@models';
-import {createSlice} from '@reduxjs/toolkit';
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface CounterState {
-  cards: CardResponse[];
+  cards: string[];
 }
 
 const initialState: CounterState = {
@@ -13,11 +12,11 @@ export const cardSlice = createSlice({
   name: 'cards',
   initialState,
   reducers: {
-    addCard: state => {
-      state.cards = [];
+    addCard: (state, action: PayloadAction<string>) => {
+      state.cards.push(action.payload);
     },
-    removeCard: state => {
-      state.cards = [];
+    removeCard: (state, action: PayloadAction<string>) => {
+      state.cards = state.cards.filter(card => card !== action.payload);
     },
   },
 });
