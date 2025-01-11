@@ -87,7 +87,7 @@ interface ISet {
   };
 }
 
-interface Card {
+export interface Card {
   id: string;
   name: string;
   supertype: string;

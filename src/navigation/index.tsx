@@ -11,8 +11,8 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 function RootStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Detail" component={PokemonDetailScreen} />
       <Stack.Screen name="List" component={PokemonListScreen} />
+      <Stack.Screen name="Detail" component={PokemonDetailScreen} />
     </Stack.Navigator>
   );
 }
