@@ -3,6 +3,6 @@ module.exports = {
   extends: '@react-native',
   rules: {
     'no-dupe-keys': 'warn',
-
+    'no-console': 'error',
   },
 };
