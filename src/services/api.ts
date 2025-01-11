@@ -3,8 +3,13 @@ import axiosInstance from './instance';
 
 const api = {
   getAllCards: async ({pageParam}: {pageParam: number}) =>
-    axiosInstance.get<CardResponse>(`cards?pageSize=10&page=${pageParam}`),
+    (
+      await axiosInstance.get<CardResponse>(
+        `cards?pageSize=10&page=${pageParam}`,
+      )
+    ).data,
 
-  getCardDetail: async (id: string) => axiosInstance.get<Card>(`cards/${id}`),
+  getCardDetail: async (id: string) =>
+    (await axiosInstance.get<Card>(`cards/${id}`)).data,
 };
 export {api};

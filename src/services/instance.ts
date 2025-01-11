@@ -15,7 +15,7 @@ axiosInstance.interceptors.request.use(async config => {
 
 axiosInstance.interceptors.response.use(
   async response => {
-    return response.data;
+    return response;
   },
   async err => {
     return Promise.reject(err);
